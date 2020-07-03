@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funcion inversa. exponencial y logarítmica.</title>
+  <link rel="stylesheet" href="estilos.css">
+  <!-- Esta parte de abajo es lo que me permite poner ecuaciones matematicas usando Latex -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    };
+    </script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <!--   ----------------------------------------------------------------------------     -->
+</head>
+<body>
+  <header>
+    <!-- <h1>Funciones inversas</h1> -->
+    <nav>
+      <ul>
+        <li>
+          Ideas Previas
+          <ol>
+            <li><a href="#grafico de funciones">Gráfico de Funciones</a></li>
+            <li><a href="#intercambio de coordenadas">Intercambio de coordenadas.</a></li>
+          </ol>
+        </li>
+        <li>
+          Función Inversa
+          <ol>
+            <li><a href="#definicion inversa ideas">Comentarios.</a></li>
+            <li><a href="#definicion inversa">Definición de Función inversa.</a></li>
+            <li></li>
+            <li></li>
+          </ol>
+        
+        </li>
+        <li>Función Exponencial</li>
+        <li>Función logarítmica</li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+  <div class="diapositivas">
+
+
+
+    <article id="ideas previas">
+
+      <section class="diapo" id="grafico_de_funciones">
+        <div class="contenido">
+          <h3>Gráfico de funciones</h3>
+          <ul>
+            <li>Se llama <a href="#grafico de una funcion">gráfico de $f(x)$</a>  a la colección de puntos $(x,f(x))$.</li>
+            <li>Toda función tiene un gráfico asociado.</li>
+            <li><a href="#curva que no es funcion">No todos los gráficos representan funciones.</a> </li>
+          </ul>
+        </div>
+        <div class="adicional">
+          <figure id="grafico de una funcion">
+            <img src="./images/grafico_de_funcion.png" alt="Grafico de una función">
+            <figcaption><p>Gráfico de una función.</p></figcaption>
+          </figure>
+          <figure id="curva que no es funcion">
+            <img src="./images/curva_que_no_es_funcion.png" alt="Curva que no representa una función">
+            <figcaption><p>Gráfico de una curva que no representa a nínguna función.</p></figcaption>
+          </figure>
+        </div>
+
+      </section>
+
+      <section class="diapo" id="intercambio de coordenadas">
+        <div class="contenido">
+          <h3>¿Qué pasa al intercambiar las coordenadas en el plano?</h3>
+          <ul>
+            <li>Ejemplo: $(1,2)$ pasa a ser $(2,1)$</li>
+            <li>Ejemplo: $(3,3)$ pasa a ser $(3,3)$ </li>
+            <li>Para un conjunto de puntos se comporta como rotación de 90° del gráfico, junto con una reflexión horizontal.</li>
+            <li>Al aplicarlo en gráficos de funciones el resultado a veces no corresponde con el gráfico de función.</li>
+          </ul>
+        </div>
+
+        <div class="adicional">
+          <figure>
+            <img src="./images/puntos_simetricos_intercambio_coordenadas.png" alt="Ejemplo de intercambio de coordenadas para puntos aislados.">
+            <figcaption><p> Ejemplo de puntos aislados al aplicar el intercambio de coordenadas.
+              Cuando los ejes tienen la misma escala, el efecto de intercambiar las coordenadas es </p>
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="./images/mano_para_intercambiar_coordenadas.png" alt="Imagen 1: mano.">
+            <img src="./images/mano_para_intercambiar_coordenadas_2.png" alt="Imagen 2: mano luego de intercambio de coordendas para cada un de sus puntos.">
+            <figcaption>
+              <p>Ejemplo de la imagen de una mano (izquierda) y el resultado de aplicar el intecambio de coordenadas en cada uno de sus puntos (derecha).</p>
+            </figcaption>
+          </figure>
+        </div>
+
+      </section>
+    </article> 
+
+
+    <article id="#funcion inversa">
+      <section class="diapo" id="definicion inversa ideas">
+
+        <div class="contenido" >
+          <h3>Función Inversa: Ideas</h3>
+          <ul>
+            <li>Se la suele notar $f^{-1}(x)$ (ojo, si es que existe).</li>
+            <li>Hace el camino opuesto \[f(x)=y \Leftrightarrow y=f^{-1}(y)\]</li>
+            <li>
+              Los puntos de $f^{-1}(x)$ son los de $f(x)$ 
+              <em> <a href="#tabla de funcion y su inversa"> con las coordenadas intercambiadas.</a></em>
+            </li>
+            <li>El gráfico de $f^{-1}(x)$ sale del <a href="#funcion y su inversa"> intercambio de coordenadas de los puntos</a> del gráfico de $f(x)$.</li>
+            <li>Existen <a href="#funcion no inversible">funciones que no tienen inversa.</a></li>
+          </ul>
+        </div>
+      
+        <div class="adicional">
+          
+          <figure id="tabla de funcion y su inversa">
+            
+            <table>
+            <tr>
+              <td>$x$</td>
+              <td>$f(x)$</td>
+            </tr>
+            <tr>
+              <td>-2</td>
+              <td>-5</td>
+            </tr>
+            <tr>
+              <td>-1</td>
+              <td>-3</td>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>-1</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>3</td>
+            </tr>
+            </table>
+          
+            <table>
+              <tr>
+                <td>$x$</td>
+                <td>$f^{-1}(x)$</td>
+              </tr>
+              <tr>
+                <td>-5</td>
+                <td>-2</td>
+              </tr>
+              <tr>
+                <td>-3</td>
+                <td>-1</td>
+              </tr>
+              <tr>
+                <td>-1</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>2</td>
+              </tr>
+            </table>
+            <figcaption>
+              <p>Tabla de valores de la función $f(x)=2\cdot x-1$ (a la derecha) y tabla de valores de su función inversa $f^{-1}(x)$. Notar las tablas tienen sus columnas de valores intercambiados.</p>
+            </figcaption>
+    
+          </figure>
+
+          <figure id="funcion y su inversa">
+            <img src="./images/funcion_inversible.png" alt="Grafico de funcion inversible">
+            <img src="./images/funcion_inversible_2.png" alt="Grafico de funcion inversible 2">
+            <figcaption>
+              <p>Función $f(x)=2x-1$ y su función inversa. Recordar que el gráfico de uno corresponde a una rotación de 90° y una reflexión horizontal.</p>
+            </figcaption>
+          </figure>
+
+          <figure id="funcion no inversible">
+            <img src="./images/funcion_no_inversible.png" alt="Función no inversible 1">
+            <img src="./images/funcion_no_inversible_2.png" alt="Función no inversible 2">
+            <figcaption>
+              <p>Gráfico de la funcion $f(x)=x^3-2x (izquierda) y de la curva que surge al intercambiar las coordenadas de los puntos del gráfico anterior. <em>La curva obentinda (derecha) no puede representar a una función.</em>
+              </p>
+              <p>El problema de $f(x)$ es pasar varias veces por la misma altura.</p>
+
+            </figcaption>
+            </figure>
+          
+
+        </div>
+
+      </section>
+
+      <section class="diapo" id="definicion inversa">
+        <div class="contenido">
+          <h3>Función inversa. Teoremas.</h3>
+          <ul>
+            <li>Las funciones que "no repiten resultados" pueden invertirse.
+              <ul>
+                <li><strong>Definición: </strong> Diremos que una función $f(x)$ es <em>inyectiva</em> si no repite resultados, es decir,
+                \[\forall x_1,x_2\in Dom f, \underbrace{x_1\neq x_2\implies f(x_1)\neq f(x_2)}_{\text{distinto x da distinto resultado}}\] </li>
+                <li><strong>Teorema: </strong>Las funciones inyectivas son inversibles.</li>
+              </ul>
+            </li>
+            <li><strong>Propiedades: </strong>
+              <ul>
+                <li>$f(x)=y \iff x=f^{-1}(y)$ (al despejar, una función "pasa como su inversa").</li>
+                <li>$Im f^{-1} = Dom f$</li>
+                <li>$Im f = f^{-1}$</li>
+              </ul>
+            </li>
+            <li><a href="#funcion y su inversa"> El gráfico de $f^{-1}(x)$ es igual al gráfico de $f(x)$ luego de una rotación 90° y una reflexión horizontal.</a></li>
+
+          </ul>
+        </div>
+      </section>
+
+    </article>
+
+
+
+  </div>
+</body>
+</html>
+

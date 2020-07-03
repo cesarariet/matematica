@@ -1,0 +1,133 @@
+/* 
+Documentación de estructura de diapositivas
+
+header --- titulo del tema (actual)
+nav --- navegación entre temas y subtemas
+
+div.diapositivas --- incluye todas las diapositivas
+    article --- división entre los temas
+        section.diapo --- contenido de cada pantalla
+            div.contenido --- texto importante
+            div.adicional --- graficos, tablas
+
+*/
+
+article *{
+    border:yellow solid 1px;
+}
+ul *{
+    border:none;
+}
+
+
+ body{
+    color: white;
+    background-color: rgb(27, 17, 63);
+    font-family: monospace;
+    font-size: 17px;
+    height: 100vh;
+    /* overflow-y: hidden; */
+
+}
+
+header{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    min-height: 1em;
+    overflow-x: auto;
+    margin-top: 0;
+    top: 0;
+    left: 0;
+    align-items: center;
+}
+
+
+header ul{
+    margin          : inherit;
+    display         : flex;
+    justify-content : space-evenly;
+    align-items     : center;
+}
+header ul li{
+    font-size: .8em;
+    transition: .3s;
+}
+header ul ol{
+    font-size: 0;
+
+}
+header ul li:hover{
+    font-size: 1.5em;
+}
+header ul li:hover ol{
+    font-size: .8em;
+}
+
+a{
+    color: white;
+
+} 
+.diapositivas{
+    display: flex;
+
+}
+
+article{
+    display: flex;
+    flex-direction: row;
+}
+
+.diapo{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+.contenido{
+    padding: 20px 5px;
+    max-width: 100%;
+    min-width: 30%;
+}
+
+.adicional{
+    object-fit: contain;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 20px 5px;
+    overflow-x: scroll;
+}
+
+figure{
+    display:flex;
+    max-width: 80%;
+}
+
+figure img{
+    max-width: 50%;
+}
+figcaption{
+    display: none;
+}
+/* img, table{
+    width: 15vh;
+    display: inline;
+}
+
+figcaption{
+    display:none;
+}
+
+figure:hover figcaption{
+    display: inline-block;
+
+} */
+
+table th, td{
+    color: black;
+    border: 1px solid black;
+    background-color: white;
+    width: 2em;
+    text-align: center;
+    font-size: 8px;
+}
